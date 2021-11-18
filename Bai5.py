@@ -12,7 +12,7 @@ def ghidulieuvaofile(ghi):
 
     count = 0
     count1 = 0
-    while(count < (len(ghi)-1)):
+    while(count < (len(ghi)-2)):
         while (count1 <= 10):
             if (count1 == 10):
                 count1 = 0
