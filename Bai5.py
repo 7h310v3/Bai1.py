@@ -12,7 +12,7 @@ def ghidulieuvaofile(ghi):
 
     count = 0
     count1 = 0
-    while(count <= len(ghi)-1):
+    while(count < (len(ghi)-1)):
         while (count1 <= 10):
             if (count1 == 10):
                 count1 = 0
@@ -20,8 +20,8 @@ def ghidulieuvaofile(ghi):
             else:
                 f.write(str(ghi[count]))
                 f.write("  ")
-                count += 1
                 count1 += 1
+                count += 1
 
     f.close()
 
