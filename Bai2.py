@@ -1,12 +1,9 @@
 tentep = input("Nhập tên tệp: ") + ".txt"
 
-f = open(tentep, mode = "r")
+with open (tentep, "r") as f:
+    f.seek(0)
+    tmp = f.read()
 
-f.seek(0)
+print(tmp)
 
-c = f.read()
-
-print((c))
-
-f.close()
 

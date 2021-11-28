@@ -1,13 +1,10 @@
 tentep = input("Nhập tên tệp: ") + ".txt"
 
-f = open(tentep, mode = "r+")
-
 chuoi1 =" " + input("Nhập 1 chuỗi: ")
 
-c = f.read()
+with open(tentep, "r+") as f:
+    tmp = f.read()
 
-f.seek(len(c))
+    f.seek(len(tmp))
 
-f.write(chuoi1)
-
-f.close()
+    f.write(chuoi1)

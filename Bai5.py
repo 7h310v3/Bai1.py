@@ -1,4 +1,5 @@
 import random
+ghi = []
 
 def taodulieu():
     count = 0
@@ -7,30 +8,45 @@ def taodulieu():
         count += 1
 
 def ghidulieuvaofile(ghi):
-    f = open(tentep, mode = "a+")
-    f.seek(0)
+    with open(tentep, "a+") as f:
+        f.seek(0)
 
-    count = 0
-    count1 = 0
-    while(count < (len(ghi))):
-        if (count1 == 10):
-            count1 = 0
-            f.write("\n")
-        else:
-            f.write(str(ghi[count]))
-            f.write("  ")
-            count1 += 1
-            count += 1
+        count = 0
+        count1 = 0
+        while (count < (len(ghi))):
+            if (count1 == 10):
+                count1 = 0
+                f.write("\n")
+            elif (count1 < 9):
+                f.write(str(ghi[count]))
+                f.write(",")
+                count1 += 1
+                count += 1
+            else:
+                f.write(str(ghi[count]))
+                count1 += 1
+                count += 1
 
-    f.close()
+def docdulieu(doc):
+    with open(tentep, mode = "r") as f:
+        line = f.readline().strip()
+        while line:
+            doc += line.split(",")
+            line = f.readline().strip()
+    return doc
 
-#main
-ghi = []
-tentep = input("Nhập tên tệp: ") + ".txt"
-f = open(tentep, mode = "a+")
+def main():
+    doc = []
+    global tentep
+    tentep = input("Nhập tên tệp: ") + ".txt"
 
-taodulieu()
+    with open(tentep, "a+") as f:
+        #taodulieu()
 
-ghidulieuvaofile(ghi)
+        #ghidulieuvaofile(ghi)
 
-f.close()
+        doc = docdulieu(doc)
+    print(doc)
+
+if __name__ == "__main__":
+    main()

@@ -1,9 +1,6 @@
 tentep = input("Nhập tên tệp: ") + ".txt"
 
-f = open(tentep, mode = "a+")
+with open(tentep, "a+") as f:
+    chuoi1 = input("Nhập 1 chuỗi: ")
 
-chuoi1 = input("Nhập 1 chuỗi: ")
-
-f.write(chuoi1)
-
-f.close()
+    f.write(chuoi1)
